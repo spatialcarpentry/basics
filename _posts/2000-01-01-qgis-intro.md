@@ -28,7 +28,7 @@ For a more thorough explanation of QGIS, <a href="http://docs.qgis.org/2.6/en/do
 
 ## The Basics
 
-  ![QGIS GUI]({{site.baseurl}}{{ASSET_PATH}}/images/qgis-gui.png)
+  ![QGIS GUI]({{BASE_PATH}}{{ASSET_PATH}}/images/qgis-gui.png)
 
 1. **Menu Bar**
 The menu bar provides access to QGIS features. In Linux systems, hover over to view menu bar options (haven't checked other systems). The QGIS version is displayed while not hovering over the menu bar (linux systems). Most common features or tools are accessable through the toolbar icons which will be the prefered method throughout this QGIS introduction.
@@ -51,7 +51,7 @@ The processing toolbox must be turned on by naviagting to <em>Menu Bar > Process
 
 ### Project properties
 
-  ![QGIS Project Properties]({{site.baseurl}}{{ASSET_PATH}}/images/project-properties.jpg)
+  ![QGIS Project Properties]({{BASE_PATH}}{{ASSET_PATH}}/images/project-properties.jpg)
 
 <em>Menu Bar > Project > Project Properties</em>
 
@@ -60,7 +60,7 @@ From here you can set the title, save relative paths (default!), set canvas unit
 
 ### Activate necessary providers
 
-  ![Activate Providers]({{site.baseurl}}{{ASSET_PATH}}/images/providers-config.jpg)
+  ![Activate Providers]({{BASE_PATH}}{{ASSET_PATH}}/images/providers-config.jpg)
 
 <em>Menu Bar > Processing > Options and configuration > Providers > $PROVIDER > Activate (be sure it's checked)</em>
 
@@ -74,7 +74,7 @@ From here you can set the title, save relative paths (default!), set canvas unit
 
 > QGIS allows users to define a global and project-wide CRS (coordinate reference system) for layers without a pre-defined CRS. It also allows the user to define custom coordinate reference systems and supports on-the-fly (OTF) projection of vector and raster layers. All of these features allow the user to display layers with different CRSs and have them overlay properly.[^2]
 
-See [Intro to Spatial Data]({{site.baseurl}}/intro/spatial-data) for more detailed info on projections.
+See [Intro to Spatial Data]({{BASE_PATH}}/intro/spatial-data) for more detailed info on projections.
 
 Each new project starts with the global default projection, [EPSG:4326 - WGS 84](http://www.spatialreference.org/epsg/wgs-84/): 
 
@@ -96,7 +96,7 @@ QGIS uses the GDAL OGR library to read and write vector data formats, such as th
 
 Vector data is added to the project by simply clicking on the Add Vector Layer tool:
 
-![Add vector in QGIS]({{site.baseurl}}{{ASSET_PATH}}/images/add-vector.png)
+![Add vector in QGIS]({{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png)
 
 View vector attribute table by right clicking on the layer and clicking Open Attribute Table. From here you can sort data, show selected features, show features visible on map, show edited and new features, filter by column, or query data with and advanced filter. 
 
@@ -108,7 +108,7 @@ QGIS uses the GDAL library to read and write raster data formats while GRASS ras
 
 Similar to adding vector data, click on the Add Raster Layer tool:
 
- ![Add raster in QGIS]({{site.baseurl}}{{ASSET_PATH}}/images/add-raster.png)
+ ![Add raster in QGIS]({{BASE_PATH}}{{ASSET_PATH}}/images/add-raster.png)
 
 ## General Spatial Functions
 
@@ -116,11 +116,11 @@ Spatial functions are accessable through <em>Menu Bar > Vector/Raster</em>. Or a
 
 ## Composing Maps (for print/non-web-based)
 
-This method is ideal for exporting your work for a research paper, admiring your work, and such. Developing a web map for dissimenating your data is a bit more involved and is discussed in the [Publish Your Data to a Web Mapi/LeafletJS]({{site.baseurl}}/visualization/leaflet) section. Also, to export data with styles see [This section link](this-is-not-a-link).
+This method is ideal for exporting your work for a research paper, admiring your work, and such. Developing a web map for dissimenating your data is a bit more involved and is discussed in the [Publish Your Data to a Web Mapi/LeafletJS]({{BASE_PATH}}/visualization/leaflet) section. Also, to export data with styles see [This section link](this-is-not-a-link).
 
 Begin by opening the Print Composer: 
 
- ![Create new Print Composer workspace]({{site.baseurl}}{{ASSET_PATH}}/images/compose-map.png)
+ ![Create new Print Composer workspace]({{BASE_PATH}}{{ASSET_PATH}}/images/compose-map.png)
 
 <br>
 
