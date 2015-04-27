@@ -2,7 +2,7 @@
 title: "QGIS Overview"
 layout: post
 category : Know the Basics
-tagline: "Supporting tagline"
+tagline: 
 tags : [applications, qgis, quantumgis]
 ---
 
