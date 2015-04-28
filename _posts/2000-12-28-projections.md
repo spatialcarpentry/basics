@@ -7,9 +7,11 @@ tags: [intro, projection]
 
 {% include JB/setup %}
 
-####**Pre-requisites: Is Spatial Special, Vectors and Rasters**
+#### Pre-requisites:
 
-####**Objectives:**
+- Setup, Basics Overview, Vectors and Rasters
+
+#### Objectives:
   - Understand purpose of using a projection on a map
   - Recognize a few projection types
 
@@ -161,7 +163,9 @@ Polyhedral projections, also known as interrupted projections seek to minimize g
 
 It is important to check the projection of your data to make sure they share the same projection prior to performing any spatial analysis. 
 
-  <a href="http://www.gdal.org" target="new">![Using GDAL to check projection]({{BASE_PATH}}{{ASSET_PATH}}/images/gdalinfo.png)</a>
+The example below utlizes the <a href="http://www.gdal.org/" target="_blanK">Geospatial Data Abstraction Library</a> within the command-line. GDAL is an excellent tool for spatial operations.
+
+  ![Using GDAL to check projection]({{BASE_PATH}}{{ASSET_PATH}}/images/gdalinfo.png)
 
 <a href="http://spatialreference.org" target="new">SpatialReference.org</a> is an extremely useful resource that houses definitions for all official projections in a variety of formats. This is a great place to find proj4 strings. 
 
@@ -171,17 +175,13 @@ Since there are a few thousand different projections, with their own area of int
 
 <table style="margin: 0px 25px;">
 <tr>
-<td><h5>EPSG:4326 (WGS84)</h5></td>
+<td><h5>EPSG:4326 (WGS84)</h5><br>
+<pre><code>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</code></pre></td>
 </tr>
 <tr>
-<td><code>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</code></td>
 </tr>
-<tr>
-<td><br></td>
-</tr>
-<td><h5>Custom proj4</h5></td>
-<tr>
-<td><code>+proj=lcc +lat_1=45.89893890000052 +lat_2=47.69601440000037 +lat_0=46.8 +lon_0=2.33722917 +x_0=600000 +y_0=200000 +a=6378249.145 +b=6356514.96582849 +pm=2.337229167 +units=m +no_defs</code></td>
+<td><h5>Custom proj4</h5>
+<pre><code>+proj=lcc +lat_1=45.89893890000052 +lat_2=47.69601440000037 +lat_0=46.8 +lon_0=2.33722917 +x_0=600000 +y_0=200000 +a=6378249.145 +b=6356514.96582849 +pm=2.337229167 +units=m +no_defs</code></pre></td>
 </tr>
 </table>
 
@@ -189,7 +189,6 @@ Since there are a few thousand different projections, with their own area of int
 
 _NOTE: When reprojecting a raster, you should also resample your raster to ensure that the cells have the same width and height. The cells will distort in the new projection and most GIS software will refuse to read a raster with irregular cells._
 
+----
 
-
-
-[^1] http://www.progonos.com
+[^1]: http://www.progonos.com

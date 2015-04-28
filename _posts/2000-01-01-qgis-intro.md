@@ -3,12 +3,23 @@ title: "QGIS Overview"
 layout: post
 category : Know the Basics
 tagline: 
-tags : [applications, qgis, quantumgis]
+tags : [qgis, projections, raster, vector]
 ---
 
+#### Pre-requisites:
+
+- Setup, Basics Overview, Raster & Vector, Reference Systems
+
+#### Objectives:
+
+- Gain a basic understanding of QGIS
+- Set up project properties
+- Import raster and vector data
+- Check spatial data projections
 
 {% include JB/setup %}
 
+----
 
 <a title="By User:Anitagraser on QGIS Wiki, User:Anitagraser (http://www.qgis.org/wiki/File:QGis_Logo.png) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AQGis_Logo.png"><img width="128" alt="QGis Logo" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/71/QGis_Logo.png/128px-QGis_Logo.png"/></a>
 
@@ -31,7 +42,7 @@ For a more thorough explanation of QGIS, <a href="http://docs.qgis.org/2.6/en/do
   ![QGIS GUI]({{BASE_PATH}}{{ASSET_PATH}}/images/qgis-gui.png)
 
 1. **Menu Bar**
-The menu bar provides access to QGIS features. In Linux systems, hover over to view menu bar options (haven't checked other systems). The QGIS version is displayed while not hovering over the menu bar (linux systems). Most common features or tools are accessable through the toolbar icons which will be the prefered method throughout this QGIS introduction.
+The menu bar provides access to QGIS features. Hover over to view menu bar options. The QGIS version is displayed while not hovering over the menu bar. Most common features or tools are accessable through the toolbar icons which will be the prefered method throughout this QGIS introduction. Add data through **Menu Bar > Layer > Add Layer**
 2. **Toolbar**
 The toolbar provides access to most standard QGIS functions. Go to <em>Menu Bar > View > Toolbars</em> to activate or deactivate toolbars. Hover over tools to view the description and puropose.
 3. **Map Legend**
@@ -58,14 +69,14 @@ The processing toolbox must be turned on by naviagting to <em>Menu Bar > Process
 From here you can set the title, save relative paths (default!), set canvas units, enable on-the-fly projection, etc. On-the-fly projection will project layers added to the project to the configured projection. 
 
 
-### Activate necessary providers
+<!-- ### Activate necessary providers
 
   ![Activate Providers]({{BASE_PATH}}{{ASSET_PATH}}/images/providers-config.jpg)
 
 <em>Menu Bar > Processing > Options and configuration > Providers > $PROVIDER > Activate (be sure it's checked)</em>
 
 [See the complete list of processing providers and algorithms here](http://docs.qgis.org/2.6/en/docs/user_manual/processing_algs/index.html?highlight=providers)
-
+-->
 ----
 
 <br>
