@@ -3,7 +3,7 @@ title: "QGIS Overview"
 layout: post
 category : Know the Basics
 tagline: 
-tags : [qgis, projections, raster, vector]
+tags : [qgis, projections, raster, vector, reproject]
 ---
 
 #### Pre-requisites:
@@ -21,7 +21,8 @@ else
 - Gain a basic understanding of QGIS
 - Set up project properties
 - Import raster and vector data
-- Check spatial data projections
+- Inspect vector and raster data
+- Reproject vector/raster data
 
 {% include JB/setup %}
 
@@ -91,19 +92,20 @@ However, this is not the same as changing the project projection. You may define
 </ol>
 
 <h3>3. Geoalgorithms</h3>
+<p>QGIS utilizes spatial functions or geoalgorithms through a set of Providers which are also free open-source software. Some basic spatial functions are clip, buffer, and intersect. These are covered in <a href="http://spatialcarpentry.github.io/spatial-analysis/ask%20some%20questions/functions/">Spatial Functions</a>. So, QGIS is simply a graphical user interface for accessing these command-line-based tools. The main geoalgorithms are provided by GDAL, GRASS, and QGIS. Navigating through the Menu Bar will display the general name of the tools. Accessing these tools through the Processing Toolbox will display each Provider and their functions.</p>
 
-Geoalgorithm is synonymous for spatial functions, which refers to performing geometric calculations on your spatial data, more specifically, on your computer... How do you think a computer is able to determine if a point is within a polygon? What is a polygon?? What is a point?? What's THE point of all of this??
-
-<h3>4. Import vector (need data!)</h3>
+<h3>4. Inspect vector data (need data!)</h3>
 <ol>
+<li>Import vector data <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/></li>
 <li>Vector properties</li>
 <li>Projection</li>
 <li>Metadata</li>
 <li>Styling</li>
 <li>Map units</li>
 </ol>
-<h3>5. Import raster (need data!)</h3>
+<h3>5. Inspect raster data (need data!)</h3>
 <ol>
+<li>Import raster data <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-raster.png"/></li>
 <li>Raster properties</li>
 <li>Metadata</li>
 <li>Raster stats</li>
