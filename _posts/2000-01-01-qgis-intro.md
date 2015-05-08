@@ -8,13 +8,11 @@ tags : [qgis, projections, raster, vector, reproject]
 
 #### Pre-requisites:
 
-- Setup, Basics Overview, Raster & Vector, Reference Systems
+- Setup
+- Basics Overview
+- Raster & Vector
+- Reference Systems
 - Installation of QGIS
-
-<pre>if load data through irods-qgis
-  iplant account setup
-else
-  link data with url for download</pre>
 
 #### Objectives:
 
@@ -24,11 +22,16 @@ else
 - Inspect vector and raster data
 - Reproject vector/raster data
 
+#### Data: 
+
+iPlant Data Store: <pre>/path/to/exercise/folder</pre>
+
+- [data one](link-to-data-one)
+- [data two](link-to-data-two)
+
 {% include JB/setup %}
 
 ----
-
-<!--[Here's a link to download QGIS](http://www2.qgis.org/en/site/forusers/download.html)-->
 
 If you haven't already, see [Installing QGIS](http://spatialcarpentry.github.io/setup/setup/qgis-install/) before continuing. Subsequent lessons depend on a QGIS installation.
 
@@ -91,10 +94,17 @@ However, this is not the same as changing the project projection. You may define
 </li>
 </ol>
 
-<h3>3. Geoalgorithms</h3>
-<p>QGIS utilizes spatial functions or geoalgorithms through a set of Providers which are also free open-source software. Some basic spatial functions are clip, buffer, and intersect. These are covered in <a href="http://spatialcarpentry.github.io/spatial-analysis/ask%20some%20questions/functions/">Spatial Functions</a>. So, QGIS is simply a graphical user interface for accessing these command-line-based tools. The main geoalgorithms are provided by GDAL, GRASS, and QGIS. Navigating through the Menu Bar will display the general name of the tools. Accessing these tools through the Processing Toolbox will display each Provider and their functions.</p>
+<h3>3. Providers</h3>
+<p>QGIS utilizes spatial functions or geoalgorithms through a set of Providers which are also free open-source software. Below is list of some QGIS Provider.</p> 
 
-<h3>4. Inspect vector data (need data!)</h3>
+<img src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-providers.png"/>
+
+<h3>4. Geoalgorithms</h3>
+<p>Some basic spatial functions are clip, buffer, and intersect. These are covered in <a href="http://spatialcarpentry.github.io/spatial-analysis/ask%20some%20questions/functions/">Spatial Functions</a>. So, QGIS is simply a graphical user interface for accessing these command-line-based tools. The main geoalgorithms are provided by GDAL, GRASS, and QGIS. Navigating through the Menu Bar will display the general name of the tools. Accessing these tools through the Processing Toolbox will display each Provider and their functions.</p>
+
+<img src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-toolbox.png"/>
+
+<h3>5. Inspect vector data (need data!)</h3>
 <ol>
 <li>Import vector data <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/></li>
 <li>Vector properties</li>
@@ -103,7 +113,7 @@ However, this is not the same as changing the project projection. You may define
 <li>Styling</li>
 <li>Map units</li>
 </ol>
-<h3>5. Inspect raster data (need data!)</h3>
+<h3>6. Inspect raster data (need data!)</h3>
 <ol>
 <li>Import raster data <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-raster.png"/></li>
 <li>Raster properties</li>
@@ -111,13 +121,8 @@ However, this is not the same as changing the project projection. You may define
 <li>Raster stats</li>
 <li>Resolution - zoom in close enough to see pixels</li>
 </ol>
-<h3>6. Reproject vector</h3>
+<h3>7. Reproject vector</h3>
 <ol>
 <li>Open a new project and import vector (need data!)</li>
-<li>Reproject steps..</li>
-</ol>
-<h3>7. Reproject raster</h3>
-<ol>
-<li>Import raster (need data!)</li>
 <li>Reproject steps..</li>
 </ol>
