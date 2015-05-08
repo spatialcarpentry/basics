@@ -24,7 +24,7 @@ tags : [qgis, projections, raster, vector, reproject]
 
 #### Data: 
 
-iPlant Data Store: <pre>/path/to/exercise/folder</pre>
+iPlant Data Store: ``/path/to/exercise/folder``
 
 - [data one](link-to-data-one)
 - [data two](link-to-data-two)
