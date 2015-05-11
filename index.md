@@ -24,11 +24,11 @@ After completing this workshop, you will:
 
 ## Topics
 
-<ul class="posts">
+<ol class="posts">
   {% for post in site.posts %}
     <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
-</ul>
+</ol>
 
 
 ----
