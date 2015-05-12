@@ -1,5 +1,5 @@
 ---
-title: "QGIS Overview"
+title: "QGIS Intro"
 layout: post
 category : Know the Basics
 tagline: 
@@ -24,7 +24,7 @@ tags : [qgis, projections, raster, vector, reproject]
 
 #### Data: 
 
-iPlant Data Store: ``/path/to/exercise/folder``
+iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``/Community Data/aegis/Spatial-bootcamp/basics/qgis-intro``
 
 - [data one](link-to-data-one)
 - [data two](link-to-data-two)
