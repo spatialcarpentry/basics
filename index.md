@@ -6,21 +6,18 @@ tagline: Fundamentals of Spatial Data
 {% include JB/setup %}
 
 
-## Goals/Objectives
+## Objectives
 
-After completing this workshop, you will:
+After completing this section, you will:
 
-  1. Know what separates spatial data from other data types
-  2. Understand the main families of spatial data - Raster data and vector data.
-  3. Know the basics of projections and coordinate systems
+1. Know what separates spatial data from other data types
+2. Understand the main families of spatial data - Raster data and vector data.
+3. Know the basics of projections and coordinate systems
 
 ## You will need:
 
-  - A working QGIS installation with the iRods Plugin installed.
-  - A registered iPlant account with access to the iPlant Data Store
-
-
-
+- A working QGIS installation with the iRods Plugin installed.
+- A registered iPlant account with access to the iPlant Data Store
 
 ## Topics
 
@@ -30,8 +27,6 @@ After completing this workshop, you will:
   {% endfor %}
 </ol>
 
-
 ----
-
 
 ## More Resources
