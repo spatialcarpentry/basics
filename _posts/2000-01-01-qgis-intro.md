@@ -49,7 +49,7 @@ This lesson is a brief exploration of QGIS. <a href="http://docs.qgis.org/2.6/en
 <ol>
 <li> If you haven't done so already, **open QGIS to begin exploring the interface**.<br><br>
 Below is the QGIS graphical user interface (GUI), allowing for much easier access to geoalgorithms (as compared to the command-line interface!). It has the standard top menu bar and icons linking to most commonly used tools as you'd see in any other GUI. Data in the map view is of Washington state geology symbolized by geologic type.<br><br>
- <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-gui.png"/><br>
+ <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-gui.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-gui.png"/><br>
 <table class="table-no-border">
 <tr>
 <td><h6>1. Menu Bar</h6><p>The menu bar provides access to QGIS features. Hover over to view menu bar options. The QGIS version is displayed while not hovering over the menu bar. Most common features or tools are accessable through the toolbar icons which will be the prefered method throughout this QGIS introduction. Add data through <em>Menu Bar > Layer > Add Layer</em></p></td>
@@ -97,12 +97,12 @@ However, this is not the same as changing the project projection. You may define
 <h3>3. Providers</h3>
 <p>QGIS utilizes spatial functions or geoalgorithms through a set of Providers which are also free open-source software. Below is list of some QGIS Provider.</p> 
 
-<img src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-providers.png"/>
+<img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-providers.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-providers.png"/>
 
 <h3>4. Geoalgorithms</h3>
 <p>Some basic spatial functions are clip, buffer, and intersect. These are covered in <a href="http://spatialcarpentry.github.io/spatial-analysis/ask%20some%20questions/functions/">Spatial Functions</a>. So, QGIS is simply a graphical user interface for accessing these command-line-based tools. The main geoalgorithms are provided by GDAL, GRASS, and QGIS. Navigating through the Menu Bar will display the general name of the tools. Accessing these tools through the Processing Toolbox will display each Provider and their functions.</p>
 
-<img src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-toolbox.png"/>
+<img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-toolbox.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-toolbox.png"/>
 
 <h3>5. Inspect vector data (need data!)</h3>
 <ol>
