@@ -26,8 +26,8 @@ tags : [qgis, projections, raster, vector, reproject]
 
 iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``/Community Data/aegis/Spatial-bootcamp/basics/qgis-intro``
 
-- [data one](link-to-data-one)
-- [data two](link-to-data-two)
+- [Arizona Counties boundaries (shapefile)](http://de.iplantcollaborative.org/dl/d/31085E1F-F3E3-4E30-8848-FC14011E6015/arizona_counties.zip)
+- [data two - Western United States MODIS MOD09Q1 - 2015-04-23 (raster)](link-to-data-two)
 
 {% include JB/setup %}
 
@@ -104,11 +104,28 @@ However, this is not the same as changing the project projection. You may define
 
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-toolbox.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-toolbox.png"/>
 
-<h3>5. Inspect vector data (need data!)</h3>
+<h3>5. Exercise: Inspect vector data</h3>
 <ol>
-<li>Import vector data <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/></li>
-<li>Vector properties</li>
-<li>Projection</li>
+<li>Import vector data<img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/>
+<ol>
+ <li>If you have not already, go to the top of this page to the <a href="#data"><strong>Data</strong></a> section and download both vector and raster data sets.</li>
+ <li>Open QGIS and import the Arizona Counties shapefile by clicking the <strong>Add Vector Layer</strong> button in the Toolbar or by navigating through <em>Menu Bar > Add Layer > Add Vector Layer.</em><br><br>Subsequent exercises will refer to adding data through the buttons in the Toolbar.<br><br></li>
+ <li>Click <strong>Browse</strong> to locate the shapefile: arizona_counties.shp<br><br><strong>Reminder:</strong> A shapefile contains 5 files, however only open the &#42;.shp extension in QGIS (or other GIS applications)<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-1.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-1.png" alt="QGIS - Add vector layer"/></li>
+ <li>We now visualizing counties in Arizona. <strong>Think about it:</strong> We are not actually visualizing the single boundary of Arizona, but the boundaries of its counties which complete the boundary of Arizona.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-2.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-2.png" alt="Spatial Carpentry: QGIS - viewing vector data"/></li>
+  </ol>
+</li>
+<li>View vector properties
+<ol>
+<li>To view vector (and all layers) attributes, <em>Right-click layer > Open Attribute Table</em><br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-3.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-3.png" alt="Spatial Carpentry: QGIS - view vector data attributes"/><br><br>This data was extracted from Global Administrative Areas, which will be covered in <strong>Data Collection</strong>. This is simple boundary data; just gives us country, state, county name, and unique identifiers for each entry. Example uses of this type of data are: joining Census tabular data; visualizing boundaries; cutting satellite imagery to a desired area.</li>
+</ol>
+</li>
+<li>Configure projection
+<ol>
+<li>There are several methods to configuring projections: set layer projections, set project projection (with on-the-fly projection), and reprojecting layers. There are also several methods to reprojecting layers which is covered later in this section. </li>
+<li>To view the current map projection, look towards the bottom right of the QGIS GUI:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-4.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-4.png" alt="Spatial Carpentry: QGIS - map projection"/><br><br>This current map projection is EPSG:4326. As it was discussed in <strong>Reference Systems</strong>, EPSG:4326 refers to World Geodetic System established in 1984, last revised in 2004 (as of May 2015) <sup id="fnref:1"><a class="footnote" href="#fn:1">1</a></sup>. This is a common reference system in web mapping and is also used with the GPS.</li>
+<li>To change the project projection <em>Menu Bar > Project > Project Properties > CRS</em><br><br>You're able to change the project projection to a predefined coordinate reference system (QGIS terms: CRS) or define your own. It's most probable that you'll be using a predefined CRS. You must enable 'on-the-fly' CRS transformation to change the project projection; this reprojects all subsequently imported layers to this defined CRS. CRSs will make or break your research. This will be discussed in later lessons.<br><br>Geographic Coordinate Systems are what the Projected Coordinate Systesm are referenced to...<br><br></li>
+</ol>
+</li>
 <li>Metadata</li>
 <li>Styling</li>
 <li>Map units</li>
@@ -125,4 +142,14 @@ However, this is not the same as changing the project projection. You may define
 <ol>
 <li>Open a new project and import vector (need data!)</li>
 <li>Reproject steps..</li>
+</ol>
+
+---- 
+
+<div class="footnotes">
+
+<p>References:</p>
+
+<ol>
+<li id="fn:1"><a href="http://web.archive.org/web/20120402143802/https://www1.nga.mil/ProductsServices/GeodesyandGeophysics/WorldGeodeticSystem/Pages/default.aspx">"World Geodetic System website of the NGA (archived April 2012)". National Geospatial-Intelligence Agency.</a></li>
 </ol>
