@@ -75,7 +75,7 @@ Below is the QGIS graphical user interface (GUI), allowing for much easier acces
 <li>Project properties:<br>
 <ul>
 <li>To view project properties, navigate to <em>Menu Bar > Project > Project properties</em></li>
-<li>Here in project properties you're able to give your project a title, configure projections, save to relative paths (because we're creating links to our data in order to import into QGIS!), and other items relate to the project itself. QGIS referes to projections as the Coordinate Reference System, or CRS.</li>
+<li>Here in project properties you're able to give our project a title, configure projections, save to relative paths (because we're creating links to our data in order to import into QGIS!), and other items relate to the project itself. QGIS referes to projections as the Coordinate Reference System, or CRS.</li>
 </li>
 <li>Vector/Raster geoalgorithms<br>
 <ul>
@@ -122,13 +122,31 @@ However, this is not the same as changing the project projection. You may define
 <li>Configure projection
 <ol>
 <li>There are several methods to configuring projections: set layer projections, set project projection (with on-the-fly projection), and reprojecting layers. There are also several methods to reprojecting layers which is covered later in this section. </li>
-<li>To view the current map projection, look towards the bottom right of the QGIS GUI:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-4.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-4.png" alt="Spatial Data Bootcamp: QGIS - map projection"/><br><br>This current map projection is EPSG:4326. As it was discussed in <strong>Reference Systems</strong>, EPSG:4326 refers to World Geodetic System established in 1984, last revised in 2004 (as of May 2015) <sup id="fnref:1"><a class="footnote" href="#fn:1">1</a></sup>. This is a common reference system in web mapping and is also used with the GPS.</li>
-<li>To change the project projection <em>Menu Bar > Project > Project Properties > CRS</em><br><br>You're able to change the project projection to a predefined coordinate reference system (QGIS terms: CRS) or define your own. It's most probable that you'll be using a predefined CRS. You must enable 'on-the-fly' CRS transformation to change the project projection; this reprojects all subsequently imported layers to this defined CRS. CRSs will make or break your research. This will be discussed in later lessons.<br><br>Geographic Coordinate Systems are what the Projected Coordinate Systesm are referenced to...<br><br></li>
+<li>To view the current map projection, look towards the bottom right of the QGIS GUI:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-4.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-4.png" alt="Spatial Data Bootcamp: QGIS - map projection"/><br><br>You can also click this button to open the <strong>Project Properties</strong> CRS settings.<br><br>This current map projection is EPSG:4326. As it was discussed in <strong>Reference Systems</strong>, EPSG:4326 refers to World Geodetic System established in 1984, last revised in 2004 (as of May 2015) <sup id="fnref:1"><a class="footnote" href="#fn:1">1</a></sup>. This is a common reference system in web mapping and is also used with the GPS.</li>
+<li>To change the project projection <em>Menu Bar > Project > Project Properties > CRS</em><br><br>You're able to change the project projection to a predefined coordinate reference system (QGIS terms: CRS) or define your own. It's most probable that you'll be using a predefined CRS. You must enable 'on-the-fly' CRS transformation to change the project projection; this reprojects all subsequently imported layers to this defined CRS. CRSs will make or break your research. This will be discussed in later lessons.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-10.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-10.png" alt="Spatail Data Bootcamp: QGIS - coordinate reference systems"/></li>
+<li>Let's change the Projected Coordinate System and see how our data obscures each time. Search for EPSG:3378, just type '3378' in the <em><strong>filter</strong></em> and reproject our data.<br><br><strong>Reminder:</strong> click <em>Apply</em> then <em>OK</em> to confirm changes each time.<br><br>If your data disapears from the map canvas: <em>Right-click layer (layer list) > Zoom to layer</em>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-11.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-11.png" alt="Spatial Data Bootcamp: QGIS - Arizona with EPSG:3378"/><br><br>Reproject our data to EPSG:3479. What differences do you notice? Do you think you can compare (perform spatial functions) two different data sets, one with each projection?<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-12.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-12.png" alt="Spatial Data Bootcamp: QGIS - Arizona with EPSG:3378"/>
+</li>
 </ol>
 </li>
-<li>Metadata</li>
 <li>Styling</li>
-<li>Map units</li>
+<ol>
+<li>You're able to customize how our data is visualized. Styles (like a template) can also be exported and saved for later use.<br><br>To style our <em>arizona_counties </em> layer: <em>Right-click layer (layer list) > Properties > Style</em><br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-5.png}}" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-5.png" alt="Spatial Data Bootcamp: QGIS - style vector layer"/><br><br>
+</li>
+<li>
+You can change the symbolism of the data by clicking on the dropdown list (default option is Single Symbol) <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-6.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-6.png" alt="Spatial Data Bootcamp: QGIS - vector symbolism"/> From the dropdown list, select <em>Categorized</em><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-7.png" alt="Spatial Data Bootcamp: QGIS - categorized symbolism"/><br><br>
+</li>
+<li>
+Once in the <em>Categorized</em> menu, configure as follows:<br><ul><li>Column: NAME_2</li><li>Color ramp: Random colors</li><li>Click <strong>Classify</strong> to add the data classifications from the column <strong>NAME_2</strong>.</li></ul><br>If you remember from looking at our Arizona counties attributes, you'll know that <strong>NAME_2</strong> represents the county name of each county.<br><br>Click <strong>Apply</strong> then <strong>OK</strong> to update changes.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-8.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-8.png" alt="Spatial Data Bootcamp: QGIS - Arizona county categorized by county name"/><br><br>
+</li>
+<li>Your map should now look similar to the one below; categorized by county name (NAME_2) with random colors.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-9.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-9.png" alt="Spatial Data Bootcamp: QGIS - symbolized by county name"/> 
+</li>
+</ol>
+<li>Canvas/map units
+<ol>
+<li>If we have space, we have distances. Check your <em><strong>Canvas Units</strong></em> to check our unit of measure: <em>Menu Bar > Project Properties > General > Canvas Units</em>.<br><br>If you're still using the ESPG:3479 projection, then you will have <strong>Feet</strong> as your unit of measure. This is critical- you have two data sets, one with a projection in meters and the other in feet, do you think there will be any issues while performing a spatial function?<br><br>There are several was to go about <em>wrangling</em> your data, some which will be covered in <strong>Data Collection</strong> and <strong>Data Wrangling</strong>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-13.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-intro-13.png" alt="Spatial Data Bootcamp: QGIS - Map units"/><br><br>Open a new map- this will prompt to save your existing workspace; save if you must, else No. A new workspace will open with EPSG:4326. 
+</li>
+</ol>
+</li>
 </ol>
 <h3>6. Inspect raster data (need data!)</h3>
 <ol>
