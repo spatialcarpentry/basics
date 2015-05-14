@@ -17,6 +17,13 @@ tags: [intro, projection, CRS]
 
 - Understand purpose of using a projection on a map
 - Recognize a few projection types
+- Reproject vector data in QGIS
+
+#### Data:
+
+iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``/Community Data/aegis/Spatial-bootcamp/basics/reference-systems``
+
+- [California state boundary (shapefile)](http://de.iplantcollaborative.org/dl/d/9FA8430E-6FDD-4579-BAD9-C33D33BFDA12/california_boundary.zip)
 
 ----
 
@@ -158,7 +165,7 @@ Polyhedral projections, also known as interrupted projections seek to minimize g
 <br>
 
 ----
-
+<!--
 ## Checking the projection
 
 It is important to check the projection of your data to make sure they share the same projection prior to performing any spatial analysis. 
@@ -166,7 +173,7 @@ It is important to check the projection of your data to make sure they share the
 The example below utlizes the <a href="http://www.gdal.org/" target="_blanK">Geospatial Data Abstraction Library</a> within the command-line. GDAL is an excellent tool for spatial operations.
 
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/gdalinfo.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/gdalinfo.png" alt="Using GDAL to check projections"/>
-
+-->
 <a href="http://spatialreference.org" target="new">SpatialReference.org</a> is an extremely useful resource that houses definitions for all official projections in a variety of formats. This is a great place to find proj4 strings. 
 
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/spatialreference.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/spatialreference.png"/>
@@ -191,6 +198,56 @@ _NOTE: When reprojecting a raster, you should also resample your raster to ensur
 
 ----
 
+<h3>Exercise</h3>
+
+There are several methods to reproject data. Two methods are explained below; a temporary change of projection within a QGIS project, or reprojecting the vector and saving it to the file.
+
+This brings up an excellent point; always check your projection! Always! 
+
+This next exercise will explain projections and reprojections in QGIS. Very important!
+
+<h4>1. Changing project projection</h4>
+
+<ol>
+<li>Open a new project and import vector california_boundary.shp. Your workspace should look similar to the one below:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" alt="Spatial Data Bootcamp: QGIS - import vector"/>
+</li>
+<li>Configure projection
+<ol>
+<li>There are several methods to configuring projections: set layer projections, set project projection (with on-the-fly projection), and reprojecting layers. There are also several methods to reprojecting layers which is covered later in this section. </li>
+<li>To view the current map projection, look towards the bottom right of the QGIS GUI:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-2.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-2.png" alt="Spatial Data Bootcamp: QGIS - map projection"/><br><br>You can also click this button to open the <strong>Project Properties</strong> CRS settings.<br><br>This current map projection is EPSG:4326. As it was discussed above, EPSG:4326 refers to World Geodetic System established in 1984, last revised in 2004 (as of May 2015) <sup id="fnref:1"><a class="footnote" href="#fn:1">1</a></sup>. This is a common reference system in web mapping and is also used with the GPS.</li>
+</ol>
+</li>
+<li>To change the project projection <em>Menu Bar > Project > Project Properties > CRS</em><br><br>You're able to change the project projection to a predefined coordinate reference system (QGIS terms: CRS) or define your own. It's most probable that you'll be using a predefined CRS. You must enable 'on-the-fly' CRS transformation to change the project projection; this reprojects all subsequently imported layers to this defined CRS. CRSs will make or break your research. This will be discussed in later lessons.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-3.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-3.png" alt="Spatail Data Bootcamp: QGIS - coordinate reference systems"/></li>
+<li>Let's change the Projected Coordinate System and see how our data obscures each time. Search for EPSG:3378, just type '3378' in the <em><strong>filter</strong></em> and reproject our data.<br><br><strong>Reminder:</strong> click <em>Apply</em> then <em>OK</em> to confirm changes each time.<br><br>If your data disapears from the map canvas: <em>Right-click layer (layer list) > Zoom to layer</em>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-5.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-5.png" alt="Spatial Data Bootcamp: QGIS - California with EPSG:3378"/><br><br>Reproject our data to EPSG:3311. What differences do you notice? Do you think you can compare (perform spatial functions) two different data sets, one with each projection?<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-6.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-6.png" alt="Spatial Data Bootcamp: QGIS - California with EPSG:3311"/>
+</li>
+<li>Canvas/map units
+<ol>
+<li>If we have space, we have distances. Check your <em><strong>Canvas Units</strong></em> to check our unit of measure: <em>Menu Bar > Project Properties > General > Canvas Units</em>.<br><br>If you're still using the ESPG:3311 projection, then you will be using <strong>Meters</strong> as your unit of measure. This is critical- you have two data sets, one with a projection in meters and the other in feet, do you think there will be any issues while performing a spatial function?<br><br>There are several was to go about <em>wrangling</em> your data, some which will be covered in <strong>Data Collection</strong> and <strong>Data Wrangling</strong>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" alt="Spatial Data Bootcamp: QGIS - Map units"/></li>
+</ol>
+</li>
+</ol>
+
+<h4>2. Reprojecting vector data</h4>
+<ol>
+<li>Reproject data with geoalgorithms
+<ol>
+<li>Open the <strong>Processing Toolbox</strong>: <em>Menu Bar > Processing > Toolbox</em><br><br>Then search "reproject", your results should be similar to the ones below. Double click on <strong>Reproject layer</strong> from the <strong>Vector</strong> category.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-8.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-8.png" alt="Spatial Data Bootcamp: QGIS - search for reproject"/>
+</li>
+<li>Select Target CRS
+<ol>
+<li>Input layer should be <strong>california_boundary [EPSG:4326]</strong>.<br><br>Click the ellipses <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" alt="Spatial Data Bootcamp: QGIS"/> to the right of <strong>Target CRS</strong> and change the CRS to <strong>EPSG:3311</strong>.<br><br>Save your image on your hard drive. We will not be using this reprojected layer during later exercises.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" alt="Spatial Data Bootcamp: QGIS - reproject layer"/>
+</li>
+<li>You have now <em>SAVED</em> your vector layer with a projetion of EPSG:3311<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" alt="Spatial Data Bootcamp: QGIS - save projected layer"/>
+</li>
+</ol>
+</li>
+</ol>
+</ol>
+<li>Saving layer with projection (reprojection)<br><br>This one is simple: <em><strong>Right-click layer (layer list) > Save As > (see image below)</strong></em><br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" alt="Spatial Data Bootcamp: QGIS - save as to reproject"/><br><br>No need to save this layer.</li>
+</ol>
+
+<hr>
+<br><br>
 [^1]: <a title="By Cartesian-coordinate-system.svg: K. Bolino derivative work: F l a n k e r (Cartesian-coordinate-system.svg) [Public domain], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3ACartesian_coordinate_system_(comma).svg">By Cartesian-coordinate-system.svg: K. Bolino derivative work: F l a n k e r (Cartesian-coordinate-system.svg) [Public domain], via Wikimedia Commons</a>
 [^2]: <a title="By Latitude_(PSF).png: Pearson Scott Foresman, donated to the Wikimedia Foundation derivative work: Gregors (talk) 08:13, 27 March 2011 (UTC) (Latitude_(PSF).png) [Public domain], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3ALatitude_lines.svg" >By Latitude_(PSF).png: Pearson Scott Foresman, donated to the Wikimedia Foundation derivative work: Gregors (talk) 08:13, 27 March 2011 (UTC) (Latitude_(PSF).png) [Public domain], via Wikimedia Commons</a>
 [^3]: <a title="By Longitude (PSF).png: Pearson Scott Forman derivative work: Gregors (Longitude (PSF).png) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3ALongitude_blue.svg">By Longitude (PSF).png: Pearson Scott Forman derivative work: Gregors (Longitude (PSF).png) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons</a>
