@@ -21,7 +21,7 @@ tags: [intro, projection, CRS]
 
 #### Data:
 
-iRods access: <br>&nbsp;&nbsp;&nbsp;``/Community Data/aegis/Spatial-bootcamp/basics/reference-systems``
+iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shard/aegis/Spatial-bootcamp/basics/reference-systems``
 
 - [California state boundary (shapefile)](http://de.iplantcollaborative.org/dl/d/9FA8430E-6FDD-4579-BAD9-C33D33BFDA12/california_boundary.zip)
 
