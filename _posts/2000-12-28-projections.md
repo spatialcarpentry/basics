@@ -19,11 +19,15 @@ tags: [intro, projection, CRS]
 - Recognize a few projection types
 - Reproject vector data in QGIS
 
+#### Exercise: [Understanding vector projections in QGIS](#vector-projection-exercise)
+
+<!--
 #### Data:
 
 iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shard/aegis/Spatial-bootcamp/basics/reference-systems``
 
 - [California state boundary (shapefile)](http://de.iplantcollaborative.org/dl/d/9FA8430E-6FDD-4579-BAD9-C33D33BFDA12/california_boundary.zip)
+-->
 
 ----
 
@@ -195,6 +199,8 @@ Since there are a few thousand different projections, with their own area of int
 </table>
 
 <br>
+
+<a name="vector-projection-exercise"></a>
 
 _NOTE: When reprojecting a raster, you should also resample your raster to ensure that the cells have the same width and height. The cells will distort in the new projection and most GIS software will refuse to read a raster with irregular cells._
 
