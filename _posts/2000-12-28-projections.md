@@ -134,7 +134,7 @@ Preserves the proportional distances between any two points from their spherical
 
 <br>
 
-Conic projections are created by projecting part of a sphere onto a cone. Conic projections tend to be useful for representing data in temperate climates due to their location. Conicn projections are not useful for representing global phenomena due to their construction.
+Conic projections are created by projecting part of a sphere onto a cone. Conic projections tend to be useful for representing data in temperate climates due to their location. Conic projections are not useful for representing global phenomena due to their construction.
 
 **Azimuthal**
 
@@ -175,6 +175,8 @@ The example below utlizes the <a href="http://www.gdal.org/" target="_blanK">Geo
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/gdalinfo.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/gdalinfo.png" alt="Using GDAL to check projections"/>
 -->
 <a href="http://spatialreference.org" target="new">SpatialReference.org</a> is an extremely useful resource that houses definitions for all official projections in a variety of formats. This is a great place to find proj4 strings. 
+
+<a href="https://trac.osgeo.org/proj/" target="_blank">PROJ.4</a> is a cartographic projection library written in <a href="http://en.wikipedia.org/wiki/C_%28programming_language%29" target="_blank">C (programming language)</a>, used for converting projections.
 
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/spatialreference.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/spatialreference.png"/>
 
@@ -222,7 +224,7 @@ This next exercise will explain projections and reprojections in QGIS. Very impo
 </li>
 <li>Canvas/map units
 <ol>
-<li>If we have space, we have distances. Check your <em><strong>Canvas Units</strong></em> to check our unit of measure: <em>Menu Bar > Project Properties > General > Canvas Units</em>.<br><br>If you're still using the ESPG:3311 projection, then you will be using <strong>Meters</strong> as your unit of measure. This is critical- you have two data sets, one with a projection in meters and the other in feet, do you think there will be any issues while performing a spatial function?<br><br>There are several was to go about <em>wrangling</em> your data, some which will be covered in <strong>Data Collection</strong> and <strong>Data Wrangling</strong>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" alt="Spatial Data Bootcamp: QGIS - Map units"/></li>
+<li>If we have space, we have distances. Check your <em><strong>Canvas Units</strong></em> to check our unit of measure: <em>Menu Bar > Project Properties > General > Canvas Units</em>.<br><br>If you're still using the ESPG:3311 projection, then you will be using <strong>Meters</strong> as your unit of measure. This is critical- you have two data sets, one with a projection in meters and the other in feet, do you think there will be any issues while performing a spatial function?<br><br>There are several ways to go about <em>wrangling</em> your data, some which will be covered in <strong>Data Collection</strong> and <strong>Data Wrangling</strong>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" alt="Spatial Data Bootcamp: QGIS - Map units"/></li>
 </ol>
 </li>
 </ol>
@@ -235,9 +237,9 @@ This next exercise will explain projections and reprojections in QGIS. Very impo
 </li>
 <li>Select Target CRS
 <ol>
-<li>Input layer should be <strong>california_boundary [EPSG:4326]</strong>.<br><br>Click the ellipses <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" alt="Spatial Data Bootcamp: QGIS"/> to the right of <strong>Target CRS</strong> and change the CRS to <strong>EPSG:3311</strong>.<br><br>Save your image on your hard drive. We will not be using this reprojected layer during later exercises.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" alt="Spatial Data Bootcamp: QGIS - reproject layer"/>
+<li>Input layer should be <strong>california_boundary [EPSG:4326]</strong>.<br><br>Click the ellipses <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" alt="Spatial Data Bootcamp: QGIS"/> to the right of <strong>Target CRS</strong> and change the CRS to <strong>EPSG:3311</strong>.<br><br>You're able to save your image on your hard drive, although we will not be using this reprojected layer during later exercises.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" alt="Spatial Data Bootcamp: QGIS - reproject layer"/>
 </li>
-<li>You have now <em>SAVED</em> your vector layer with a projetion of EPSG:3311<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" alt="Spatial Data Bootcamp: QGIS - save projected layer"/>
+<li>You have now <em>SAVED</em> your vector layer with a projection of EPSG:3311<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" alt="Spatial Data Bootcamp: QGIS - save projected layer"/>
 </li>
 </ol>
 </li>
