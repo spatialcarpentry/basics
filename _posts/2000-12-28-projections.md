@@ -211,12 +211,15 @@ This next exercise will explain projections and reprojections in QGIS. Very impo
 <h4>1. Changing project projection</h4>
 
 <ol>
-<li>Open a new project and import vector california_boundary.shp. Your workspace should look similar to the one below:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" alt="Spatial Data Bootcamp: QGIS - import vector"/>
+<li>Open a new project and import vector california_boundary.shp through iRods:<br><br>
+&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/basics/raster</code><br><br>
+Or download here, unpack, and <strong>Add Vector Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/>: <a href="http://de.iplantcollaborative.org/dl/d/9FA8430E-6FDD-4579-BAD9-C33D33BFDA12/california_boundary.zip">california_boundary.zip</a><br><br>
+Your workspace should look similar to the one below:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" alt="Spatial Data Bootcamp: QGIS - import vector"/>
 </li>
 <li>Configure projection
 <ol>
-<li>There are several methods to configuring projections: set layer projections, set project projection (with on-the-fly projection), and reprojecting layers. There are also several methods to reprojecting layers which is covered later in this section. </li>
-<li>To view the current map projection, look towards the bottom right of the QGIS GUI:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-2.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-2.png" alt="Spatial Data Bootcamp: QGIS - map projection"/><br><br>You can also click this button to open the <strong>Project Properties</strong> CRS settings.<br><br>This current map projection is EPSG:4326. As it was discussed above, EPSG:4326 refers to World Geodetic System established in 1984, last revised in 2004 (as of May 2015) <sup id="fnref:1"><a class="footnote" href="#fn:1">1</a></sup>. This is a common reference system in web mapping and is also used with the GPS.</li>
+<li>There are several methods to configuring projections: set layer projections, set project projection (with on-the-fly projection), and reprojecting layers. There are also several methods to reprojecting layers which is covered later in this section.<br><br> </li>
+<li>To view the current map projection, look towards the bottom right of the QGIS GUI:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-2.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-2.png" alt="Spatial Data Bootcamp: QGIS - map projection"/><br><br>You can also click this button to open the <strong>Project Properties</strong> CRS settings.<br><br>This current map projection is EPSG:4326. As it was discussed above, EPSG:4326 refers to World Geodetic System established in 1984, last revised in 2004 (as of May 2015) <sup id="fnref:1"><a class="footnote" href="#fn:1">1</a></sup>. This is a common reference system in web mapping and is also used with the GPS.<br><br></li>
 </ol>
 </li>
 <li>To change the project projection <em>Menu Bar > Project > Project Properties > CRS</em><br><br>You're able to change the project projection to a predefined coordinate reference system (QGIS terms: CRS) or define your own. It's most probable that you'll be using a predefined CRS. You must enable 'on-the-fly' CRS transformation to change the project projection; this reprojects all subsequently imported layers to this defined CRS. CRSs will make or break your research. This will be discussed in later lessons.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-3.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-3.png" alt="Spatail Data Bootcamp: QGIS - coordinate reference systems"/></li>
@@ -247,7 +250,7 @@ This next exercise will explain projections and reprojections in QGIS. Very impo
 </ol>
 </ol>
 <li>Saving layer with projection (reprojection):<br><br>This one is simple: <em><strong>Right-click layer (layer list) > Save As > (see image below)</strong></em><br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" alt="Spatial Data Bootcamp: QGIS - save as to reproject"/><br><br></li>
-<li>You can delete these California shapefiles.</li>
+<li>You can delete these California shapefiles from your hard drive. You should now be able to save a shapefile with a desired projection.</li>
 </ol>
 
 <hr>
