@@ -206,11 +206,13 @@ _NOTE: When reprojecting a raster, you should also resample your raster to ensur
 
 ----
 
-<h3>Exercise</h3>
+<h3>Projection Exercise</h3>
 
 There are several methods to reproject data. Two methods are explained below; a temporary change of projection within a QGIS project, or reprojecting the vector and saving it to the file.
 
 This brings up an excellent point; always check your projection! Always! 
+
+Projection errors are very common and are often misunderstood. It make take some time before fully nderstanding. Practice makes perfect.
 
 This next exercise will explain projections and reprojections in QGIS. Very important!
 
@@ -218,8 +220,8 @@ This next exercise will explain projections and reprojections in QGIS. Very impo
 
 <ol>
 <li>Open a new project and import vector california_boundary.shp through iRods:<br><br>
-&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/basics/raster</code><br><br>
-Or download here, unpack, and <strong>Add Vector Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/>: <a href="http://de.iplantcollaborative.org/dl/d/9FA8430E-6FDD-4579-BAD9-C33D33BFDA12/california_boundary.zip">california_boundary.zip</a><br><br>
+&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/basics/raster/california_boundary.shp</code><br><br>
+Or download here, unzip, and <strong>Add Vector Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/>:<br> <a href="http://de.iplantcollaborative.org/dl/d/9FA8430E-6FDD-4579-BAD9-C33D33BFDA12/california_boundary.zip">california_boundary.zip</a><br><br>
 Your workspace should look similar to the one below:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-1.png" alt="Spatial Data Bootcamp: QGIS - import vector"/>
 </li>
 <li>Configure projection
@@ -233,7 +235,7 @@ Your workspace should look similar to the one below:<br><br><img data-featherlig
 </li>
 <li>Canvas/map units
 <ol>
-<li>If we have space, we have distances. Check your <em><strong>Canvas Units</strong></em> to check our unit of measure: <em>Menu Bar > Project Properties > General > Canvas Units</em>.<br><br>If you're still using the ESPG:3311 projection, then you will be using <strong>Meters</strong> as your unit of measure. This is critical- you have two data sets, one with a projection in meters and the other in feet, do you think there will be any issues while performing a spatial function?<br><br>There are several ways to go about <em>wrangling</em> your data, some which will be covered in <strong>Data Collection</strong> and <strong>Data Wrangling</strong>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" alt="Spatial Data Bootcamp: QGIS - Map units"/></li>
+<li>If we have space, we have distances. Check your <em><strong>Canvas Units</strong></em> to check our unit of measure: <em>Menu Bar > Project Properties > General > Canvas Units</em>.<br><br>If you're still using the ESPG:3311 projection, then you will be using <strong>Meters</strong> as your unit of measure. This is critical- you have two data sets, one with a projection in meters and the other in feet, do you think there will be any issues while performing a spatial function?<br><br>There are several ways to go about <em>wrangling</em> your data, some which will be covered in <strong>Data Collection</strong> and <strong>Data Wrangling</strong>.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-7.png" alt="Spatial Data Bootcamp: QGIS - Map units"/>Close the Project Properties.</li>
 </ol>
 </li>
 </ol>
@@ -249,14 +251,13 @@ Your workspace should look similar to the one below:<br><br><img data-featherlig
 <ol>
 <li>Input layer should be <strong>california_boundary [EPSG:4326]</strong>.<br><br>Click the ellipses <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-10.png" alt="Spatial Data Bootcamp: QGIS"/> to the right of <strong>Target CRS</strong> and change the CRS to <strong>EPSG:3311</strong>.<br><br>A temporary (stored in memory) layer will be created if you do not define a file location. You must define a location if you wish to use this reprojected.<br><br>This how how you <em>SAVE</em> your vector layer with a given projection.<img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-9.png" alt="Spatial Data Bootcamp: QGIS - reproject layer"/>
 </li>
-<li>The output shapefile is created with all necessary files. California boundary saved with EPSG:3311:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" alt="Spatial Data Bootcamp: QGIS - save projected layer"/>
+<li>The output shapefile is created with all necessary files. California boundary saved with EPSG:3311:<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-11.png" alt="Spatial Data Bootcamp: QGIS - save projected layer"/>Return to QGIS.<br><br>
 </li>
 </ol>
 </li>
 </ol>
 </ol>
-<li>Saving layer with projection (reprojection):<br><br>This one is simple: <em><strong>Right-click layer (layer list) > Save As > (see image below)</strong></em><br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" alt="Spatial Data Bootcamp: QGIS - save as to reproject"/><br><br></li>
-<li>You can delete these California shapefiles from your hard drive. You should now be able to save a shapefile with a desired projection.</li>
+<li>Saving layer with projection (reprojection):<br><br>This one is simple: <em><strong>Right-click layer (layer list) > Save As > (see image below)</strong></em><br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/projection-12.png" alt="Spatial Data Bootcamp: QGIS - save as to reproject"/><br><br>You have now been introduced to projections and their importance.<br><br>Close this project.<br></li>
 </ol>
 
 <hr>
