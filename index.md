@@ -27,6 +27,9 @@ After completing this section, you will:
   {% endfor %}
 </ol>
 
+<!--
+
 ----
 
 ## More Resources
+-->
